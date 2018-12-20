@@ -31,10 +31,11 @@ end
 def hit?(current_total)
   prompt_user
   user_input = get_user_input
-#  until (user_input == "s" || user_input == "h")
-#    invalid_command
-#    prompt_user
-#  end
+  until (user_input == "s" || user_input == "h")
+    invalid_command
+    prompt_user
+    user_input = get_user_input
+  end
   current_total += deal_card if user_input == "h"
   current_total
 end
