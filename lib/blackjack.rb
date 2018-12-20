@@ -28,7 +28,7 @@ def initial_round
   initial_sum
 end
 
-def hit?(current_total)
+def hit?(card_total)
   prompt_user
   user_input = get_user_input
   until (user_input == "s" || user_input == "h")
@@ -36,8 +36,8 @@ def hit?(current_total)
     prompt_user
     user_input = get_user_input
   end
-  current_total += deal_card if user_input == "h"
-  current_total
+  card_total += deal_card if user_input == "h"
+  card_total
 end
 
 def invalid_command
@@ -49,6 +49,11 @@ end
 #####################################################
 
 def runner
-  until 
+  card_total = 0
+  until card_total > 21
+    welcome
+    card_total += initial_round
+    hit?()
+  end
 end
     
