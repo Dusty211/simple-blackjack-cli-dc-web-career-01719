@@ -31,7 +31,7 @@ end
 def hit?(current_total)
   prompt_user
   user_input = get_user_input
-#  while user_input != ("s" || "h")
+#  until (user_input == "s" || user_input == "h")
 #    invalid_command
 #    prompt_user
 #  end
